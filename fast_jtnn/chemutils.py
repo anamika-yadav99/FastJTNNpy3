@@ -17,7 +17,7 @@ def get_mol(smiles):
     mol = Chem.MolFromSmiles(smiles)
     if mol is None: 
         return None
-    Chem.Kekulize(mol)
+    Chem.Kekulize(mol, clearAromaticFlags=True)
     return mol
 
 def get_smiles(mol):
